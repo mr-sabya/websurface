@@ -36259,7 +36259,7 @@ button {
 }
 
 .breadcrumb {
-  background: center/cover no-repeat url("../../img/breadcrumb.html");
+  background: center/cover no-repeat url("../img/breadcrumb.html");
 }
 .breadcrumb h1 {
   font-size: 45px;

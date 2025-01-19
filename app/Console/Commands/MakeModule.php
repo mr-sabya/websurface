@@ -30,7 +30,7 @@ class MakeModule extends Command
 
         // Create module folder structure
         $this->filesystem->makeDirectory("{$modulePath}/Http/Livewire", 0755, true);
-        $this->filesystem->makeDirectory("{$modulePath}/Controllers", 0755, true);
+        $this->filesystem->makeDirectory("{$modulePath}/Http/Controllers", 0755, true);
         $this->filesystem->makeDirectory("{$modulePath}/Models", 0755, true);
         $this->filesystem->makeDirectory("{$modulePath}/Migrations", 0755, true);
         $this->filesystem->makeDirectory("{$modulePath}/Views/livewire", 0755, true);
@@ -38,8 +38,8 @@ class MakeModule extends Command
         $this->filesystem->makeDirectory("{$modulePath}/Config", 0755, true);
 
         // Create default files
-        $this->filesystem->put("{$modulePath}/FrontendServiceProvider.php", $this->getServiceProviderContent($moduleName));
-        $this->filesystem->put("{$modulePath}/Routes/web.php", $this->getRoutesContent());
+        $this->filesystem->put("{$modulePath}/{$moduleName}ServiceProvider.php", $this->getServiceProviderContent($moduleName));
+        $this->filesystem->put("{$modulePath}/Routes/web.php", $this->getRoutesContent($moduleName));
         $this->filesystem->put("{$modulePath}/Config/{$moduleName}.php", $this->getConfigContent());
         $this->filesystem->put("{$modulePath}/Http/Livewire/ExampleComponent.php", $this->getLivewireComponentContent($moduleName));
         $this->filesystem->put("{$modulePath}/Views/livewire/example-component.blade.php", $this->getViewContent());
@@ -82,13 +82,13 @@ class {$moduleName}ServiceProvider extends ServiceProvider
 EOD;
     }
 
-    protected function getRoutesContent()
+    protected function getRoutesContent($moduleName)
     {
         return <<<EOD
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Modules\\Example\Http\Livewire\ExampleComponent;
+use App\Modules\\{$moduleName}\\Http\\Livewire\\ExampleComponent;
 
 Route::get('/', ExampleComponent::class)->name('example.home');
 EOD;

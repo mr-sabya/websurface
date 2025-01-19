@@ -2,18 +2,15 @@
     <div class="container-fluid">
         <div
             class="d-flex align-items-center justify-content-between flex-wrap wv-gap-10">
-            <a href="#" class="header-logo">
-                <img src="img/logo.png" alt="Logo" />
-            </a>
+            
+            <!-- logo -->
+            <livewire:frontend.theme.logo />
+            <!-- logo -->
+
             <nav class="header-nav navbar-nav" id="navbarNav">
                 <ul>
-                    <li class="dropdown-nav">
-                        <a href="#">Home</a>
-                        <ul class="submenu">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index-2.html">Home 2</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="{{ route('frontend.index') }}" wire:navigate>Home</a></li>
+
                     <li class="dropdown-nav">
                         <a href="#">Services</a>
                         <ul class="submenu">

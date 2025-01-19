@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Frontend\Controllers;
+namespace App\Modules\Frontend\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
@@ -8,6 +8,6 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('frontend::home.index');
+        return view('frontend::pages.home.index');
     }
 }

@@ -11,6 +11,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \App\Console\Commands\MakeModule::class,
         \App\Console\Commands\MakeLivewireInModule::class,
+        \App\Console\Commands\MakeControllerInModule::class,
     ];
 
     /**

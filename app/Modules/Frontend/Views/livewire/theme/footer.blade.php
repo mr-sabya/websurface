@@ -2,7 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-3 col-lg-3 col-sm-6 wv-mb-lg-30">
-                <a href="#" class="footer-logo"><img src="img/footer-logo.png" alt="Logo" /></a>
+
+                <livewire:frontend.theme.logo isFooter="1" />
+
+                
                 <p class="wv-mt-30 wv-fs-14">
                     A digital agency specializes in creating online strategies for
                     businesses to optimize

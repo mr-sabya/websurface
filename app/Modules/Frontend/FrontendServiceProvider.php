@@ -28,6 +28,14 @@ class FrontendServiceProvider extends ServiceProvider
         Livewire::component('frontend.theme.header', \App\Modules\Frontend\Http\Livewire\Theme\Header::class);
         Livewire::component('frontend.theme.sidebar', \App\Modules\Frontend\Http\Livewire\Theme\Sidebar::class);
         Livewire::component('frontend.theme.footer', \App\Modules\Frontend\Http\Livewire\Theme\Footer::class);
+        // for logo
+        Livewire::component('frontend.theme.logo', \App\Modules\Frontend\Http\Livewire\Theme\Logo::class);
+
+        // for banner
+        Livewire::component('frontend.home.banner', \App\Modules\Frontend\Http\Livewire\Home\Banner::class);
+
+        // forn brand
+        Livewire::component('frontend.home.brand', \App\Modules\Frontend\Http\Livewire\Home\Brand::class);
 
 
         // Register the view namespace for the Frontend module
